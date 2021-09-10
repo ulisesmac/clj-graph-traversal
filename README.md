@@ -1,8 +1,8 @@
-# Graph Traversal 
+# Graph Traversal
 
 A Clojure implementation for directed graphs
 
-## Dependencies 
+## Dependencies
 
 - Java 8 or Java 11
 - Leiningen
@@ -14,16 +14,13 @@ You can clone it and execute `lein repl` to start a REPL to try the functions or
 
 ## Usage
 
-You can see a graph example with `example-graph`.
-The namespace `graph.core` comes with the next functions:
+To see a graph example with `example-graph`. The namespace `graph.core` comes with the next functions:
 
 - `make-graph`
 - `shortest-path`
 - `eccentrycity`
 - `radius`
 - `diameter`
-
-You can run `(doc function-name)` to see its usage.
 
 Here is a brief example of execution:
 
@@ -41,7 +38,7 @@ Here is a brief example of execution:
 
 ## Tests
 
-This implementation comes with some tests to ensure that it behaves as expected, but they are not as rigorous as it 
+This implementation comes with some tests to ensure that it behaves as expected, but they are not as rigorous as it
 should be, in fact they should verify properties instead of concrete cases. These tests have helped me to implement the
 solution.
 
