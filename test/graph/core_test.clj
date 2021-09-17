@@ -112,13 +112,13 @@
     (testing "There are not multiple arrows with same source and target nodes."
 
       (let [not-repeated-edges? (fn [[_ adjs]]
-                                  (= (count (set adjs)) (set adjs)))
+                                  (= (count (set adjs)) (count adjs)))
             random-order-1 (inc (rand-int 10000))
             random-order-2 (inc (rand-int 200))
             random-order-3 (inc (rand-int 200))]
 
         ;; minimum number of edges
-        (are [num-vertices] (every? #(not (not-repeated-edges? %))
+        (are [num-vertices] (every? #(not-repeated-edges? %)
                                     (sut/make-graph num-vertices (- num-vertices 1)))
              2
              10
@@ -129,7 +129,7 @@
              10000
              random-order-1)
         ;; complete graph
-        (are [num-vertices] (every? #(not (not-repeated-edges? %))
+        (are [num-vertices] (every? #(not-repeated-edges? %)
                                     (sut/make-graph num-vertices (* num-vertices (- num-vertices 1))))
              2
              10
@@ -139,7 +139,7 @@
              random-order-2)
 
         ;; a graph with size between n-1 and (n * (n-1))
-        (are [num-vertices] (every? #(not (not-repeated-edges? %))
+        (are [num-vertices] (every? #(not-repeated-edges? %)
                                     (sut/make-graph num-vertices (+ num-vertices 1
                                                                     (rand-int (- (* num-vertices (- num-vertices 1))
                                                                                  num-vertices)))))
